@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 // JPA = Java Persistence API
 
+// ORM -> Mapeamento objeto-relacional -> Faz a tradução dos tipos de dados do Java para o banco de dados, mapeando os objetos da classe e traduz para banco de dados
 @Entity
 @Table(name = "tb_cadastro")
 @Data
@@ -18,8 +19,13 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @Column(name = "") -> decide o nome da coluna se quisermos especificar se não é nome da variável.
     private Long id;
     private String nome;
+
+
+    private String imgUrl;
+
     @Column(unique = true)
     private String email;
     private int idade;
