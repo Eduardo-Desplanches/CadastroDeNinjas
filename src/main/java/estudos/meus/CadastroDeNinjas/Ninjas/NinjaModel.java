@@ -19,15 +19,19 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "") -> decide o nome da coluna se quisermos especificar se não é nome da variável.
+
+    @Column(name = "id")
     private Long id;
+    @Column(name = "nome")
     private String nome;
-
-
-    private String imgUrl;
 
     @Column(unique = true)
     private String email;
+
+    @Column(name = "img_url")
+    private String imgUrl;
+
+    @Column(name = "idade")
     private int idade;
 
     //  @ManytoOne -> muitos ninja tem uma única missão
