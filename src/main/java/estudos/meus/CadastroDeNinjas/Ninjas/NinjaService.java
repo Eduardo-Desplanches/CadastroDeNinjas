@@ -1,5 +1,9 @@
 package estudos.meus.CadastroDeNinjas.Ninjas;
 
+import estudos.meus.CadastroDeNinjas.Missoes.MissoesModel;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,5 +27,9 @@ public class NinjaService {
     public NinjaModel listarNinjasPorId(Long id){
         Optional<NinjaModel> ninjaId = ninjaRepository.findById(id);
         return ninjaId.orElse(null);
+    }
+
+    public NinjaModel criarNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
     }
 }
